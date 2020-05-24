@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Core">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="fn_Drew_RestoreSQL_ChildInsert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_ChildInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_ChildSetID.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_ChildSetID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_ColList.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_ColList.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_GrandChildInsert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_GrandChildInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_GrandChildSetID.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_GrandChildSetID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_GreatGrandInsert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_GreatGrandInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_ListItemInsert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_ListItemInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_NestedInsert.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_NestedInsert.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_trigDisEn_t.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_trigDisEn_t.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_RestoreSQL_Wrap.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>fn_Drew_RestoreSQL_Wrap.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_RestoreItem.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_RestoreItem.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_RestoreSubItem.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_RestoreSubItem.sql</FullPath>
+        </FileNode>
+        <FileNode Name="type_Drew_RestoreTree.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>type_Drew_RestoreTree.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items>
+        <FileNode Name="build 2209">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>build 2209</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

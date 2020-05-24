@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Test">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="drop all sql modules.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>drop all sql modules.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_Restore_CheckDeleted.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_Restore_CheckDeleted.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_Restore_CheckIdentical.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_Restore_CheckIdentical.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_Restore_Diff.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_Restore_Diff.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_Restore_FindTestData.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_Restore_FindTestData.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_Restore_Test.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_Restore_Test.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_Drew_TableInfo.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_Drew_TableInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="spot check restore tree.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>spot check restore tree.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sync local test dbs with dfedrew.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sync local test dbs with dfedrew.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sync remote test dbs with dfe2009 .sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sync remote test dbs with dfe2009 .sql</FullPath>
+        </FileNode>
+        <FileNode Name="test station.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>test station.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

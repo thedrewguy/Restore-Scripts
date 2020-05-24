@@ -1,0 +1,24 @@
+--drop sprocs
+drop proc sp_Drew_RestoreItem
+drop proc sp_Drew_RestoreSubItem
+
+--drop fns
+drop function fn_Drew_Restore_Addresses_RestoreTree_t
+drop function fn_Drew_Restore_CandidateIntroductions_RestoreTree_t
+drop function fn_Drew_Restore_JobOrders_RestoreTree_t
+drop function fn_Drew_Restore_MedCompanies_RestoreTree_t
+drop function fn_Drew_Restore_Opportunities_RestoreTree_t
+drop function fn_Drew_Restore_Task_RestoreTree_t
+drop function fn_Drew_Restore_People_RestoreTree_t
+drop function fn_Drew_RestoreSQL_ChildInsert
+drop function fn_Drew_RestoreSQL_ChildSetID
+drop function fn_Drew_RestoreSQL_ColList
+drop function fn_Drew_RestoreSQL_GrandChildInsert
+drop function fn_Drew_RestoreSQL_GrandChildSetID
+drop function fn_Drew_RestoreSQL_GreatGrandInsert
+drop function fn_Drew_RestoreSQL_ListItemInsert
+drop function fn_Drew_RestoreSQL_trigDisEn_t
+drop function fn_Drew_RestoreSQL_Wrap
+
+--drop type
+drop type Drew_RestoreTree

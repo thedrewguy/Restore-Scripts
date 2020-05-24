@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Core", "Core\Core.ssmssqlproj", "{0A2095E8-B460-436A-A2F2-F853AEAF9A4A}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Addresses", "Addresses\Addresses.ssmssqlproj", "{3B47D2C4-4C3D-47AE-AA28-9513F90DC2FE}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "People", "People\People.ssmssqlproj", "{1BCB5F63-976D-4491-92EB-A99B6ACEAB4F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Task", "Task\Task.ssmssqlproj", "{52950C47-39D2-4120-8C2E-9B104D06A0BA}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Test", "Test\Test.ssmssqlproj", "{A467E3B8-7B17-4452-AC99-AE108D00070C}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "People Delivery", "People Delivery\People Delivery.ssmssqlproj", "{7FCCC032-882D-42FC-9035-CB16251B8746}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A2095E8-B460-436A-A2F2-F853AEAF9A4A}.Default|Default.ActiveCfg = Default
+		{3B47D2C4-4C3D-47AE-AA28-9513F90DC2FE}.Default|Default.ActiveCfg = Default
+		{1BCB5F63-976D-4491-92EB-A99B6ACEAB4F}.Default|Default.ActiveCfg = Default
+		{52950C47-39D2-4120-8C2E-9B104D06A0BA}.Default|Default.ActiveCfg = Default
+		{A467E3B8-7B17-4452-AC99-AE108D00070C}.Default|Default.ActiveCfg = Default
+		{7FCCC032-882D-42FC-9035-CB16251B8746}.Default|Default.ActiveCfg = Default
+		{5CDA9ECE-81A9-4DE1-A8F5-E37F5BF88E1B}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2812ACB-C7B9-484F-809F-0C9837717C38}
+	EndGlobalSection
+EndGlobal
