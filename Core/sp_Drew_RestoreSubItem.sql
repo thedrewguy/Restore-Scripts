@@ -1,3 +1,8 @@
+/*
+	require:
+	fn_Drew_RestoreSQL_Wrap
+*/
+
 if object_id('sp_Drew_RestoreSubItem') is not null
 	drop proc sp_Drew_RestoreSubItem
 go

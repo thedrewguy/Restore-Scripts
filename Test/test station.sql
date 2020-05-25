@@ -1,15 +1,20 @@
+/*
+	require:
+	sp_Drew_Restore_FindTestData
+	sp_DRew_Restore_Test
+*/
 
-declare @Tardb varchar(255) = 'DFETarget'
-declare @Sourdb varchar(255) = 'DFESource'
-declare @MainTable nvarchar(255) = 'People'
-declare @IDField nvarchar(255) = 'PeopleID'
-declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_People_DiffTable_t'
-declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_People_RestoreTree_t'
+declare @Tardb varchar(255) = 'MedTarget'
+declare @Sourdb varchar(255) = 'MedSource'
+declare @MainTable nvarchar(255) = 'Addresses'
+declare @IDField nvarchar(255) = 'AddressesID'
+declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedAddresses_DiffTable_t'
+declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedAddresses_RestoreTree_t'
 declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 95324
+declare @MainRecordID int = 78507
 --set @FindTestData = 1
 set @TestRestore = 1
 
