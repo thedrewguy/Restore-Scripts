@@ -31,7 +31,7 @@ as begin
 		)
 	
 
-	return @ColList
+	return isnull(@ColList, '')
 
 end
 

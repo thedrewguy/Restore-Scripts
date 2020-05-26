@@ -19,8 +19,8 @@ as begin
 	declare @sql nvarchar(max) = N''
 
 	set @sql = @Sql
-	+ @nl + '	INSERT INTO ' + @Tardb + '..' + @InsTable + '(' + dbo.fn_Drew_RestoreSQL_ColList(@InsTable, 0) + ')'
-	+ @nl + '	SELECT ' + dbo.fn_Drew_RestoreSQL_ColList(@InsTable, 1)
+	+ @nl + '	INSERT INTO ' + @Tardb + '..' + @InsTable + '(' + isnull(dbo.fn_Drew_RestoreSQL_ColList(@InsTable, 0), '') + ')'
+	+ @nl + '	SELECT ' + isnull(dbo.fn_Drew_RestoreSQL_ColList(@InsTable, 1), '')
 	+ @nl + '	FROM ' + @Sourdb + '..' + @InsTable + ' Sour'
 	+ @nl + '	JOIN ' + @Sourdb + '..' + @ParentTable + ' SourParent'
 	+ @nl + '		on ' + @SourParentJoinOn

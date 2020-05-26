@@ -42,10 +42,8 @@ as begin
 			declare @TableName varchar(255), @Operation varchar(255), @RestoreSQL nvarchar(max), @Fatal bit
 
 			select @TableName = TableName, @Operation = Operation, @RestoreSQL = RestoreSQL, @Fatal = Fatal from @RestoreTree where id = @r_i
-
 			--execute
 			exec sp_Drew_RestoreSubItem @MainRecordID, @TableName, @Operation, @RestoreSQL, @Fatal, @NestLevel
-	
 			--increment
 			set @r_i = @r_i + 1
 		end

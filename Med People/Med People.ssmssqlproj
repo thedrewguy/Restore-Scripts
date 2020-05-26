@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="People">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Med People">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="localhost:SUPER">
-          <Created>2020-05-24T19:34:10.8842174-07:00</Created>
+          <Created>2020-05-24T16:11:29.8626068-07:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
           <UserName>SUPER</UserName>
@@ -19,17 +19,23 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="fn_Drew_Restore_People_DiffTable_t.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>fn_Drew_Restore_People_DiffTable_t.sql</FullPath>
-        </FileNode>
-        <FileNode Name="fn_Drew_Restore_People_RestoreTree_t.sql">
+        <FileNode Name="delete trigger.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
-          <FullPath>fn_Drew_Restore_People_RestoreTree_t.sql</FullPath>
+          <FullPath>delete trigger.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_Restore_MedPeople_DiffTable_t.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>fn_Drew_Restore_MedPeople_DiffTable_t.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fn_Drew_Restore_MedPeople_RestoreTree_t.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>fn_Drew_Restore_MedPeople_RestoreTree_t.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

@@ -33,16 +33,12 @@ as begin
 
 	if @HasIdentity = 1 and @Operation = 'insert'
 		set @sql = @sql
-		+ @nl + 'SET IDENTITY_INSERT ' + @Table + ' ON'
+		+ @nl + 'set identity_insert ' + @Table + ' ON'
 
-	--tran, sp, try (handles non-fatal runtime)
-
-	declare @sp nvarchar(255) = N'subitem_start_' + cast(@NestLevel as nvarchar(255))
+	--try catch (handles non-fatal runtime)
 
 	set @sql = @sql
-	+ @nl + 'begin tran'
-	+ @nl + 'save tran ' + @sp
-	+ @nl + 'BEGIN TRY'
+	+ @nl + 'begin try'
 
 	--disable trigs
 
@@ -75,43 +71,36 @@ as begin
 		set @sql = @sql
 		+ @nl + @entrigs
 
-	--commit
-
-	set @sql = @sql
-	+ @nl + '	commit tran'
-
 	--identity insert off
 
 	if @HasIdentity = 1 and @Operation = 'insert'
 		set @sql = @sql
-		+ @nl + '	SET IDENTITY_INSERT ' + @Table + ' OFF'
+		+ @nl + '	set identity_insert ' + @Table + ' off'
 
 	--success message, start catch block
 
 	set @sql = @sql
 	+ @nl + '	print ''Success - ' + @Table + ' ' + @Operation + ' - '' + cast(@rc as varchar(255)) + '' row(s) affected'''
-	+ @nl + 'END TRY'
-	+ @nl + 'BEGIN CATCH'
+	+ @nl + 'end try'
+	+ @nl + 'begin catch'
 	+ @nl + '	print ''Fail - ' + @Table + ' ' + @Operation + ''''
-	+ @nl + '	rollback tran ' + @sp
-	+ @nl + '	commit tran'
 	
 	--identity insert off
 
 	if @HasIdentity = 1 and @Operation = 'insert'
 		set @sql = @sql
-		+ @nl + '	SET IDENTITY_INSERT ' + @Table + ' OFF'
+		+ @nl + '	set identity_insert ' + @Table + ' off'
 
 	--error if fatal
 
 	if @Fatal = 1
 		set @sql = @sql
-		+ @nl + '	RAISERROR(''Failed to ' + @Operation + ' ' + @Table + ' Record'', 11, 1)'
+		+ @nl + '	raiserror(''Failed to ' + @Operation + ' ' + @Table + ' Record'', 11, 1)'
 
 	--finish catch block
 
 	set @sql = @sql
-	+ @nl + 'END CATCH'
+	+ @nl + 'end catch'
 
 	--return
 
