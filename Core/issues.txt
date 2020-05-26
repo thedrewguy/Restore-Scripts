@@ -1,3 +1,0 @@
-Bug - Deferred Name Gen Fatal.
-if table doesn't exist, leads to fatal error. applies to: 2202+ (possibly before? should test)
-temporary fix in Med People. fix is in sp_Drew_RestoreSubItem. doesn't fix disabled triggers :/
