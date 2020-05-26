@@ -2,20 +2,33 @@
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Addresses">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
-      <Items />
+      <Items>
+        <ConnectionNode Name="localhost:SUPER">
+          <Created>2020-05-24T17:01:19.8409543-07:00</Created>
+          <Type>SQL</Type>
+          <Server>localhost</Server>
+          <UserName>SUPER</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>MedTarget</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="fn_Drew_Restore_Addresses_DiffTable_t.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_Restore_Addresses_DiffTable_t.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_Restore_Addresses_RestoreTree_t.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_Restore_Addresses_RestoreTree_t.sql</FullPath>
         </FileNode>
       </Items>

@@ -6,15 +6,22 @@
 
 declare @Tardb varchar(255) = 'MedTarget'
 declare @Sourdb varchar(255) = 'MedSource'
-declare @MainTable nvarchar(255) = 'Addresses'
-declare @IDField nvarchar(255) = 'AddressesID'
-declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedAddresses_DiffTable_t'
-declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedAddresses_RestoreTree_t'
+declare @MainTable nvarchar(255) = 'People'
+declare @IDField nvarchar(255) = 'PeopleID'
+declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedPeople_DiffTable_t'
+declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedPeople_RestoreTree_t'
 declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 78507
+declare @MainRecordID int = 77253
+
+
+
+
+
+
+
 --set @FindTestData = 1
 set @TestRestore = 1
 

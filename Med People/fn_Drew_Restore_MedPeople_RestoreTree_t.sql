@@ -6,16 +6,16 @@
 	fn_Drew_RestoreSQL_ChildSetID
 	fn_Drew_RestoreSQL_GrandChildSetID
 	fn_Drew_RestoreSQL_NestedInsert
-	fn_Drew_Restore_Addresses_RestoreTree_t
+	fn_Drew_Restore_MedAddresses_RestoreTree_t
 	fn_Drew_Restore_Task_RestoreTree_t
 */
 
 
-if object_id('fn_Drew_Restore_People_RestoreTree_t') is not null
-	drop function fn_Drew_Restore_People_RestoreTree_t
+if object_id('fn_Drew_Restore_MedPeople_RestoreTree_t') is not null
+	drop function fn_Drew_Restore_MedPeople_RestoreTree_t
 go
 
-create function fn_Drew_Restore_People_RestoreTree_t(@SourDB varchar(255), @TarDB varchar(255))
+create function fn_Drew_Restore_MedPeople_RestoreTree_t(@SourDB varchar(255), @TarDB varchar(255))
 returns @RestoreTree table(id int identity primary key, TableName varchar(255) not null, Operation varchar(255) not null, RestoreSQL nvarchar(max) not null, Fatal bit not null default(0))
 as begin
 	--children to restore
@@ -117,8 +117,7 @@ as begin
 			GrandTable varchar(255), ParentGrandJoinOn varchar(255), MainLinkField varchar(255) not null, ObjectTableName varchar(255), Fatal bit not null, InsertSQL nvarchar(max) null, RestoreSQL nvarchar(max) null)
 			
 		insert into @GreatGrand(InsTable, InsTarSourJoinOn, InsNNField, ParentTable, SourParentJoinOn, GrandTable, ParentGrandJoinOn, MainLinkField, ObjectTableName, Fatal)
-		values('UsersCommissionsSplit', 'Tar.UsersCommissionsSplitID = Sour.UsersCommissionsSplitID', 'UsersCommissionsSplitID', 'Interview', 'SourParent.InterviewID = Sour.ObjectID and Sour.Type = ''Interview''', 'ProjectsClientTeams', 'SourGrand.PeopleID = SourParent.Interviewer and SourGrand.ProjectsID = SourParent.ProjectsID and SourParent.Done = 0', 'PeopleID', null, 0),
-		('LinkInterviewersToClientInterview', 'Tar.LinkInterviewersToClientInterviewID = Sour.LinkInterviewersToClientInterviewID', 'LinkInterviewersToClientInterviewID', 'Interview', 'SourParent.InterviewID = Sour.RightID', 'ProjectsClientTeams', 'SourGrand.PeopleID = SourParent.Interviewer and SourGrand.ProjectsID = SourParent.ProjectsID and SourParent.Done = 0', 'PeopleID', null, 0)
+		values('UsersCommissionsSplit', 'Tar.UsersCommissionsSplitID = Sour.UsersCommissionsSplitID', 'UsersCommissionsSplitID', 'Interview', 'SourParent.InterviewID = Sour.ObjectID and Sour.Type = ''Interview''', 'ProjectsClientTeams', 'SourGrand.PeopleID = SourParent.Interviewer and SourGrand.ProjectsID = SourParent.ProjectsID and SourParent.Done = 0', 'PeopleID', null, 0)
 		
 		--set child IDs
 	
@@ -190,7 +189,7 @@ as begin
 	--custom
 	declare @nl nvarchar(2) = char(13) + char(10)
 
-	declare @GDPRSQL nvarchar(max) = '	delete GDPRLog where PeopleID = @MainRecordID'
+	declare @GDPRSQL nvarchar(max) = '	delete ' + @Tardb + '..GDPRLog where PeopleID = @MainRecordID'
 
 	declare @TasksSQL nvarchar(max) = ''
 	+ @nl + '	select Sour.TaskID'
@@ -232,7 +231,7 @@ as begin
 	insert into @RestoreTree(TableName, RestoreSQL, Operation, Fatal)
 	values('GDPRLog', @GDPRSQL, 'delete', 0),
 	('Task', dbo.fn_Drew_RestoreSQL_NestedInsert(@SourDB, @TarDB, @TasksSQL, 'fn_Drew_Restore_Task_RestoreTree_t'), 'nested restore', 0),
-	('Addresses', dbo.fn_Drew_RestoreSQL_NestedInsert(@SourDB, @TarDB, @AddressesSQL, 'fn_Drew_Restore_Addresses_RestoreTree_t'), 'nested restore', 0)
+	('Addresses', dbo.fn_Drew_RestoreSQL_NestedInsert(@SourDB, @TarDB, @AddressesSQL, 'fn_Drew_Restore_MedAddresses_RestoreTree_t'), 'nested restore', 0)
 		
 	return
 end
