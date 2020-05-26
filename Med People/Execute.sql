@@ -2,14 +2,14 @@
 	INSTRUCTIONS:
 
 	1. Make sure the source database is upgraded to the same Deskflow version as the target database
-	2. Open the script "01 People Pre-Restore.sql" under the Target database (which you are restoring to) and run it
-	3. Open the script "02 Restore Person from Backup" in the target database
+	2. Run the script "01 Pre-Restore.sql" in the Target database (which you are restoring to)
+	3. Open the script "02 Restore" in the target database
 	4. Set the three variables PeopleID, SourceDBPath and TargetDBPath
 	5. Run
 	
 	ABOUT:
 	
-	Script updated for standard Deskflow build 2209 (by Drew)
+	Script updated for Medical Deskflow build 2209 (by Drew)
 	This script should be updated:
 		- when a DELETE trigger is added or changed
 */
