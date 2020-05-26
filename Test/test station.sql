@@ -6,15 +6,15 @@
 
 declare @Tardb varchar(255) = 'MedTarget'
 declare @Sourdb varchar(255) = 'MedSource'
-declare @MainTable nvarchar(255) = 'Companies'
-declare @IDField nvarchar(255) = 'CompaniesID'
-declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedCompanies_DiffTable_t'
-declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedCompanies_RestoreTree_t'
+declare @MainTable nvarchar(255) = 'JobOrders'
+declare @IDField nvarchar(255) = 'JobOrdersID'
+declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedJobOrders_DiffTable_t'
+declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedJobOrders_RestoreTree_t'
 declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 5641
+declare @MainRecordID int = 28
 
 
 
@@ -32,6 +32,6 @@ if @TestRestore = 1
 
 --spot checks
 
---sp_Drew_Restore_Diff @SourceDBName = 'DFESource', @TargetDBName = 'DFETarget', @TableName = 'InternalInterviews', @WhereClause = 'WHERE CompaniesID = @MainRecordID and Done = 0', @MainRecordID = 95324
+--sp_Drew_Restore_Diff @SourceDBName = 'DFESource', @TargetDBName = 'DFETarget', @TableName = 'InternalInterviews', @WhereClause = 'WHERE JobOrdersID = @MainRecordID and Done = 0', @MainRecordID = 95324
 --SELECT * FROM Drew_Diff
 --DROP TABLE Drew_Diff

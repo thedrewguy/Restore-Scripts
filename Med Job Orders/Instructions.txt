@@ -1,0 +1,13 @@
+INSTRUCTIONS:
+
+1. Make sure the source database is upgraded to the same Deskflow version as the target database
+2. Run the script "01 Pre-Restore.sql" in the Target database
+3. Open the script "02 Restore" in the target database
+4. Set the three variables JobOrdersID, SourceDBPath and TargetDBPath
+5. Run
+	
+ABOUT:
+	
+Script updated for Deskflow Medical build 2209 (by Drew)
+This script should be updated:
+	- when a DELETE trigger is added or changed
