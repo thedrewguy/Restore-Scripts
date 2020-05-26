@@ -4,12 +4,9 @@ drop proc sp_Drew_RestoreSubItem
 
 --drop fns
 drop function fn_Drew_Restore_Addresses_RestoreTree_t
-drop function fn_Drew_Restore_CandidateIntroductions_RestoreTree_t
-drop function fn_Drew_Restore_JobOrders_RestoreTree_t
-drop function fn_Drew_Restore_MedCompanies_RestoreTree_t
-drop function fn_Drew_Restore_Opportunities_RestoreTree_t
 drop function fn_Drew_Restore_Task_RestoreTree_t
 drop function fn_Drew_Restore_People_RestoreTree_t
+drop function fn_Drew_Restore_MedPeople_RestoreTree_t
 drop function fn_Drew_RestoreSQL_ChildInsert
 drop function fn_Drew_RestoreSQL_ChildSetID
 drop function fn_Drew_RestoreSQL_ColList

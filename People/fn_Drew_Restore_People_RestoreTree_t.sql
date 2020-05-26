@@ -30,7 +30,7 @@ as begin
 		('Notes', 'Tar.NotesID = Sour.NotesID', 'NotesID', 'PeopleID', null, 0),
 		('LinkPeopleToSkills', 'Tar.LinkPeopleToSkillsID = Sour.LinkPeopleToSkillsID', 'LinkPeopleToSkillsID', 'PeopleID', null, 0),
 		('Affiliates', 'Tar.AffiliatesID = Sour.AffiliatesID', 'AffiliatesID', 'PeopleID', null, 0),
-		('Education', 'Tar.EducationID = Sour.EducationID', 'EducationID', 'PeopleID', null, 0),
+		('Eduxcation', 'Tar.EducationID = Sour.EducationID', 'EducationID', 'PeopleID', null, 0),
 		('PeopleAvailability', 'Tar.PeopleAvailabilityID = Sour.PeopleAvailabilityID', 'PeopleAvailabilityID', 'PeopleID', null, 0),
 		('LinkPeopleToCredentials', 'Tar.LinkPeopleToCredentialsID = Sour.LinkPeopleToCredentialsID', 'LinkPeopleToCredentialsID', 'PeopleID', null, 0),
 		('LinkPeopleToCompanies', 'Tar.LinkPeopleToCompaniesID = Sour.LinkPeopleToCompaniesID', 'LinkPeopleToCompaniesID', 'PeopleID', null, 0),
