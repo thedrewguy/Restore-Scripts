@@ -4,17 +4,17 @@
 	sp_DRew_Restore_Test
 */
 
-declare @Tardb varchar(255) = 'MedTarget'
-declare @Sourdb varchar(255) = 'MedSource'
-declare @MainTable nvarchar(255) = 'JobOrders'
-declare @IDField nvarchar(255) = 'JobOrdersID'
-declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_MedJobOrders_DiffTable_t'
-declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_MedJobOrders_RestoreTree_t'
+declare @Tardb varchar(255) = 'DFETarget'
+declare @Sourdb varchar(255) = 'DFESource'
+declare @MainTable nvarchar(255) = 'MProjects'
+declare @IDField nvarchar(255) = 'MProjectsID'
+declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_CandidateIntroductions_DiffTable_t'
+declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_CandidateIntroductions_RestoreTree_t'
 declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 28
+declare @MainRecordID int = 22
 
 
 
