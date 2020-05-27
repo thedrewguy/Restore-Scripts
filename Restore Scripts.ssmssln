@@ -13,11 +13,15 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Task", "Task\Task.ssmssqlpr
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Test", "Test\Test.ssmssqlproj", "{A467E3B8-7B17-4452-AC99-AE108D00070C}"
 EndProject
-Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "People Delivery", "People Delivery\People Delivery.ssmssqlproj", "{7FCCC032-882D-42FC-9035-CB16251B8746}"
-EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Med People", "Med People\Med People.ssmssqlproj", "{FBC4CF3A-B17F-408F-9F7A-D305C53DF827}"
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Med Addresses", "Med Addresses\Med Addresses.ssmssqlproj", "{3666A79C-1762-43C1-9EF3-445F8B871FE5}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Med Companies", "Med Companies\Med Companies.ssmssqlproj", "{F9220D2A-2011-4CD9-908A-EC4D14384CF7}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Med Job Orders", "Med Job Orders\Med Job Orders.ssmssqlproj", "{B934AF9F-4AED-45DE-81DB-17C16EBD436F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Candidate Introductions", "Candidate Introductions\Candidate Introductions.ssmssqlproj", "{937D0E3E-3110-4FEF-8A3C-DC3338FADE7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +33,12 @@ Global
 		{1BCB5F63-976D-4491-92EB-A99B6ACEAB4F}.Default|Default.ActiveCfg = Default
 		{52950C47-39D2-4120-8C2E-9B104D06A0BA}.Default|Default.ActiveCfg = Default
 		{A467E3B8-7B17-4452-AC99-AE108D00070C}.Default|Default.ActiveCfg = Default
-		{7FCCC032-882D-42FC-9035-CB16251B8746}.Default|Default.ActiveCfg = Default
 		{FBC4CF3A-B17F-408F-9F7A-D305C53DF827}.Default|Default.ActiveCfg = Default
-		{7010D17A-BD79-4360-B387-E7B3752C3BD3}.Default|Default.ActiveCfg = Default
 		{3666A79C-1762-43C1-9EF3-445F8B871FE5}.Default|Default.ActiveCfg = Default
+		{AA6B7710-84F2-4D9B-A645-372154275A65}.Default|Default.ActiveCfg = Default
+		{F9220D2A-2011-4CD9-908A-EC4D14384CF7}.Default|Default.ActiveCfg = Default
+		{B934AF9F-4AED-45DE-81DB-17C16EBD436F}.Default|Default.ActiveCfg = Default
+		{937D0E3E-3110-4FEF-8A3C-DC3338FADE7E}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

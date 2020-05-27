@@ -4,12 +4,12 @@
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="localhost:SUPER">
-          <Created>2020-05-24T18:58:00.301598-07:00</Created>
+          <Created>2020-05-26T11:49:33.5803371-07:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
           <UserName>SUPER</UserName>
           <Authentication>SQL</Authentication>
-          <InitialDB>MedTarget</InitialDB>
+          <InitialDB>DFETarget</InitialDB>
           <LoginTimeout>30</LoginTimeout>
           <ExecutionTimeout>0</ExecutionTimeout>
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
@@ -32,9 +32,9 @@
           <FullPath>fn_Drew_RestoreSQL_ChildSetID.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_ColList.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_RestoreSQL_ColList.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_GrandChildInsert.sql">
@@ -50,9 +50,9 @@
           <FullPath>fn_Drew_RestoreSQL_GrandChildSetID.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_GreatGrandInsert.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_RestoreSQL_GreatGrandInsert.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_ListItemInsert.sql">
@@ -62,15 +62,15 @@
           <FullPath>fn_Drew_RestoreSQL_ListItemInsert.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_NestedInsert.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
           <FullPath>fn_Drew_RestoreSQL_NestedInsert.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_trigDisEn_t.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
           <FullPath>fn_Drew_RestoreSQL_trigDisEn_t.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_Wrap.sql">
@@ -78,6 +78,12 @@
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_RestoreSQL_Wrap.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Pre-Restore.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>Pre-Restore.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_Drew_RestoreItem.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
@@ -92,9 +98,9 @@
           <FullPath>sp_Drew_RestoreSubItem.sql</FullPath>
         </FileNode>
         <FileNode Name="type_Drew_RestoreTree.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
           <FullPath>type_Drew_RestoreTree.sql</FullPath>
         </FileNode>
       </Items>
