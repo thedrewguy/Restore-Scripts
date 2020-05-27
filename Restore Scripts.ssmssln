@@ -23,6 +23,12 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Med Job Orders", "Med Job O
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Candidate Introductions", "Candidate Introductions\Candidate Introductions.ssmssqlproj", "{937D0E3E-3110-4FEF-8A3C-DC3338FADE7E}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Opportunities", "Opportunities\Opportunities.ssmssqlproj", "{B26BC9B8-30A1-4812-A1FB-E586F64E038F}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Projects", "Projects\Projects.ssmssqlproj", "{F1A1CA44-AAE3-429D-8A5E-89368945DA3C}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Web Job Postings", "Web Job Postings\Web Job Postings.ssmssqlproj", "{02B92D35-02E2-40CA-8C7D-E292BC7633A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
@@ -35,10 +41,13 @@ Global
 		{A467E3B8-7B17-4452-AC99-AE108D00070C}.Default|Default.ActiveCfg = Default
 		{FBC4CF3A-B17F-408F-9F7A-D305C53DF827}.Default|Default.ActiveCfg = Default
 		{3666A79C-1762-43C1-9EF3-445F8B871FE5}.Default|Default.ActiveCfg = Default
-		{AA6B7710-84F2-4D9B-A645-372154275A65}.Default|Default.ActiveCfg = Default
 		{F9220D2A-2011-4CD9-908A-EC4D14384CF7}.Default|Default.ActiveCfg = Default
 		{B934AF9F-4AED-45DE-81DB-17C16EBD436F}.Default|Default.ActiveCfg = Default
 		{937D0E3E-3110-4FEF-8A3C-DC3338FADE7E}.Default|Default.ActiveCfg = Default
+		{B26BC9B8-30A1-4812-A1FB-E586F64E038F}.Default|Default.ActiveCfg = Default
+		{8EAB536E-0679-4029-8FB5-728234AAC930}.Default|Default.ActiveCfg = Default
+		{F1A1CA44-AAE3-429D-8A5E-89368945DA3C}.Default|Default.ActiveCfg = Default
+		{02B92D35-02E2-40CA-8C7D-E292BC7633A6}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,6 +19,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="(dep) sp_Drew_TableInfo.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>(dep) sp_Drew_TableInfo.sql</FullPath>
+        </FileNode>
         <FileNode Name="drop all sql modules.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -26,40 +32,40 @@
           <FullPath>drop all sql modules.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_Drew_Restore_CheckDeleted.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sp_Drew_Restore_CheckDeleted.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_Drew_Restore_CheckIdentical.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sp_Drew_Restore_CheckIdentical.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_Drew_Restore_Diff.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sp_Drew_Restore_Diff.sql</FullPath>
         </FileNode>
         <FileNode Name="sp_Drew_Restore_FindTestData.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sp_Drew_Restore_FindTestData.sql</FullPath>
         </FileNode>
-        <FileNode Name="sp_Drew_Restore_Test.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>sp_Drew_Restore_Test.sql</FullPath>
+        <FileNode Name="sp_Drew_Restore_TableInfo.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>sp_Drew_Restore_TableInfo.sql</FullPath>
         </FileNode>
-        <FileNode Name="sp_Drew_TableInfo.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>sp_Drew_TableInfo.sql</FullPath>
+        <FileNode Name="sp_Drew_Restore_Test.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>sp_Drew_Restore_Test.sql</FullPath>
         </FileNode>
         <FileNode Name="spot check restore tree.sql">
           <AssociatedConnectionMoniker />

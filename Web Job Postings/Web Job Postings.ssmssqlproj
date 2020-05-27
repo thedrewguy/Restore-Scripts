@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Opportunities">
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Web Job Postings">
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="localhost:SUPER">
-          <Created>2020-05-27T10:26:58.0644275-07:00</Created>
+          <Created>2020-05-27T16:06:02.2469493-07:00</Created>
           <Type>SQL</Type>
           <Server>localhost</Server>
           <UserName>SUPER</UserName>
@@ -19,29 +19,17 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="delete trigger.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>delete trigger.sql</FullPath>
-        </FileNode>
-        <FileNode Name="Execute.sql">
+        <FileNode Name="fn_Drew_Restore_WebJobPostings_DiffTable_t.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
-          <FullPath>Execute.sql</FullPath>
+          <FullPath>fn_Drew_Restore_WebJobPostings_DiffTable_t.sql</FullPath>
         </FileNode>
-        <FileNode Name="fn_Drew_Restore_Opportunities_DiffTable_t.sql">
+        <FileNode Name="fn_Drew_Restore_WebJobPostings_RestoreTree_t.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
-          <FullPath>fn_Drew_Restore_Opportunities_DiffTable_t.sql</FullPath>
-        </FileNode>
-        <FileNode Name="fn_Drew_Restore_Opportunities_RestoreTree_t.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
-          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
-          <FullPath>fn_Drew_Restore_Opportunities_RestoreTree_t.sql</FullPath>
+          <FullPath>fn_Drew_Restore_WebJobPostings_RestoreTree_t.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
@@ -52,18 +40,6 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>build 2209</FullPath>
-        </FileNode>
-        <FileNode Name="Instructions.txt">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>Instructions.txt</FullPath>
-        </FileNode>
-        <FileNode Name="Opportunities Restore Tree.xlsx">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
-          <FullPath>Opportunities Restore Tree.xlsx</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

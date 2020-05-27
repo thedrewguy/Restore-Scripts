@@ -6,15 +6,15 @@
 
 declare @Tardb varchar(255) = 'DFETarget'
 declare @Sourdb varchar(255) = 'DFESource'
-declare @MainTable nvarchar(255) = 'Opportunities'
-declare @IDField nvarchar(255) = 'OpportunitiesID'
-declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_Opportunities_DiffTable_t'
-declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_Opportunities_RestoreTree_t'
+declare @MainTable nvarchar(255) = 'WebJobPostings'
+declare @IDField nvarchar(255) = 'WebJobPostingsID'
+declare @DiffTableFn nvarchar(255) = 'fn_Drew_Restore_WebJobPostings_DiffTable_t'
+declare @RestoreTreeFn nvarchar(255) = 'fn_Drew_Restore_WebJobPostings_RestoreTree_t'
 declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 3
+declare @MainRecordID int = 421
 
 
 
