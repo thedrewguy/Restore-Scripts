@@ -1,3 +1,8 @@
+/*
+	require:
+	sp_Drew_Restore_Diff
+*/
+
 BEGIN TRY DROP PROC sp_Drew_Restore_CheckIdentical END TRY BEGIN CATCH END CATCH
 GO
 

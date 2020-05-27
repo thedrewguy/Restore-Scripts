@@ -20,7 +20,7 @@ as
 	declare @sql nvarchar(max) = N''
 	declare @nl nvarchar(2) = char(13) + char(10)
 
-	set @sql = @sql + 'declare @links table(' + @IDField + ' int, TableName varchar(255), index a(' + @IDField + '))
+	set @sql = @sql + 'declare @links table(id int identity, ' + @IDField + ' int, TableName varchar(255), unique(' + @IDField + ', id))
 	insert into @links(' + @IDField + ', TableName)
 	select ' + @MainTable + '.' + @IDField + ', tablename
 	from ' + @MainTable + '
