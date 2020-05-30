@@ -14,7 +14,7 @@ declare @FindTestData bit = 0
 declare @TestRestore bit = 0
 
 --param
-declare @MainRecordID int = 6407
+declare @MainRecordID int = 6622
 
 
 
@@ -32,6 +32,7 @@ if @TestRestore = 1
 
 --spot checks
 
---sp_Drew_Restore_Diff @SourceDBName = 'DFESource', @TargetDBName = 'DFETarget', @TableName = 'InternalInterviews', @WhereClause = 'WHERE JobOrdersID = @MainRecordID and Done = 0', @MainRecordID = 95324
+--sp_Drew_Restore_Diff @SourceDBName = 'DFESource', @TargetDBName = 'DFETarget', @TableName = 'Webjobpostings', @WhereClause = N'WHERE ProjectsID = @MainRecordID', @MainRecordID = 6407
 --SELECT * FROM Drew_Diff
 --DROP TABLE Drew_Diff
+

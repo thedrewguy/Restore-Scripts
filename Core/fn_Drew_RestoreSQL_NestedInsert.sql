@@ -32,6 +32,7 @@ as begin
 	+ @nl + '		--dec'
 	+ @nl + '		set @id = @id - 1'
 	+ @nl + '	end'
+	+ @nl + '	update @Items set ItemID = ItemID --just for row count'
 	
 	return @sql
 

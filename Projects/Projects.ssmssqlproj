@@ -53,6 +53,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
       <Items>
+        <FileNode Name="Block Conflict Report (run after Project Restore).dfr">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Block Conflict Report (run after Project Restore).dfr</FullPath>
+        </FileNode>
         <FileNode Name="Restore Tree.xlsx">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />

@@ -21,7 +21,9 @@ insert into @RestoreTree(TableName, Operation, RestoreSQL, Fatal)
 select TableName, Operation, RestoreSQL, Fatal
 from dbo.fn_Drew_Restore_Projects_RestoreTree_t(@SourceDBPath, @TargetDBPath)
 
-select * from @RestoreTree
-select  RestoreSQL from @RestoreTree where TableName = 'Task' and operation = 'Nested restore' for xml path('')
-
+--select * from @RestoreTree
+declare @RestoreSQL nvarchar(max) = (
+	select  RestoreSQL from @RestoreTree where TableName = 'webjobpostings'for xml path(''), root('a'), type
+).value('a[1]', 'varchar(max)')
+print @RestoreSQL
 --exec sp_Drew_RestoreItem @SourDB = @SourceDBPath, @TarDB = @TargetDBPath, @RestoreTree = @RestoreTree, @MainRecordID = @ProjectsID, @NestLevel = 1

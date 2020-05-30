@@ -56,9 +56,9 @@ as begin
 		('ProjectsClientEmployeesLists', 'Tar.ProjectsID = Sour.ProjectsID and Tar.PeopleID = Sour.PeopleID', 'ProjectsID', 'ProjectsID', null, 0),
 		('ProjectsInternalInterviewLists', 'Tar.ProjectsID = Sour.ProjectsID and Tar.PeopleID = Sour.PeopleID', 'ProjectsID', 'ProjectsID', null, 0),
 		('ProjectsShortLists', 'Tar.ProjectsID = Sour.ProjectsID and Tar.PeopleID = Sour.PeopleID', 'ProjectsID', 'ProjectsID', null, 0),
-		('LinkObjectToActivityHistory', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'RightID', 'Projects', 0),
-		('LinkObjectToTask', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'RightID', 'Projects', 0),
-		('LinkObjectToDocument', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'RightID', 'Projects', 0),
+		('LinkObjectToActivityHistory', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Projects', 0),
+		('LinkObjectToTask', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Projects', 0),
+		('LinkObjectToDocument', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Projects', 0),
 		('CandidateReferences', 'Tar.CandidateReferencesID = Sour.CandidateReferencesID', 'CandidateReferencesID', 'ProjectsID', null, 0)
 
 		--list items
@@ -166,7 +166,7 @@ as begin
 	+ @nl + '	from ' + @Sourdb + '..WebJobPostings Sour'
 	+ @nl + '	left join ' + @Tardb + '..WebJobPostings Tar'
 	+ @nl + '		on Tar.WebJobPostingsID = Sour.WebJobPostingsID'
-	+ @nl + '	where Sour.JobOrdersID = @MainRecordID'
+	+ @nl + '	where Sour.ProjectsID = @MainRecordID'
 	+ @nl + '	and Sour.WebJobPostingsID is not null'
 	+ @nl + '	and Tar.WebJobPostingsID is null'
 
