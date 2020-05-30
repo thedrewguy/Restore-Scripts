@@ -68,9 +68,9 @@
           <FullPath>sp_Drew_Restore_Test.sql</FullPath>
         </FileNode>
         <FileNode Name="spot check restore tree.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>spot check restore tree.sql</FullPath>
         </FileNode>
         <FileNode Name="sync local test dbs with dfedrew.sql">

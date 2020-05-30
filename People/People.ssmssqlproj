@@ -32,9 +32,9 @@
           <FullPath>fn_Drew_Restore_People_DiffTable_t.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_Restore_People_RestoreTree_t.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_Restore_People_RestoreTree_t.sql</FullPath>
         </FileNode>
       </Items>

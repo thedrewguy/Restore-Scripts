@@ -62,9 +62,9 @@
           <FullPath>fn_Drew_RestoreSQL_ListItemInsert.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_NestedInsert.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>fn_Drew_RestoreSQL_NestedInsert.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_RestoreSQL_trigDisEn_t.sql">
