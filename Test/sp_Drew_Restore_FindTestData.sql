@@ -74,7 +74,7 @@ as
 		order by recordScores.tabs desc
 	) topRecord
 	order by tab.TableName'
-
+	
 	exec sp_executesql @sql
 go
 

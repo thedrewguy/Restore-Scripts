@@ -2224,3 +2224,186 @@ go
 /**************************************************************************************************************************/
 
 
+if object_id('fn_Drew_RestoreSQL_Companies_TCBlockAndLog') is not null
+	drop function fn_Drew_RestoreSQL_Companies_TCBlockAndLog
+go
+
+create function fn_Drew_RestoreSQL_Companies_TCBlockAndLog()
+returns varchar(max)
+as begin
+return '
+--block log table
+if object_id(''CompanyRestore_BlockLog'') is not null
+	drop table CompanyRestore_BlockLog
+
+create table CompanyRestore_BlockLog(PeopleID int, BeforeStatus int, BeforeDescription varchar(50), BeforeProjectsID int, AfterStatus int, AfterDescription varchar(50), AfterProjectsID int)
+
+--pre-restore block
+insert into CompanyRestore_BlockLog(PeopleID, BeforeStatus, BeforeDescription, BeforeProjectsID)
+select People.PeopleID, People.CandidateBlockStatus, People.BlockDescription, People.CandidateBlockProjectsID
+from (
+	select distinct PeopleID from ProjectTargetCompaniesCandidates ptcc where CompaniesID = @MainRecordID
+) pid
+join People
+	on People.PeopleID = pid.PeopleID
+
+--post-restore block
+update bl set AfterStatus = cb.CandidateBlockStatus, AfterDescription = cb.BlockDescription, AfterProjectsID = cb.CandidateBlockProjectsID
+from CompanyRestore_BlockLog bl
+outer apply dbo.fn_Drew_Restore_CandidateBlock_t(bl.PeopleID) cb
+
+--remove unchanged
+delete CompanyRestore_BlockLog
+where isnull(BeforeStatus, 0) = isnull(AfterStatus, 0)
+and isnull(BeforeDescription, '''') = isnull(AfterDescription, '''')
+and isnull(BeforeProjectsID, 0) = isnull(AfterProjectsID, 0)
+
+--apply
+update People
+set CandidateBlockStatus = bl.AfterStatus, BlockDescription = bl.AfterDescription, CandidateBlockProjectsID = bl.AfterProjectsID
+from People
+join CompanyRestore_BlockLog bl
+	on bl.PeopleID = People.PeopleID
+
+if @@ROWCOUNT > 0
+select ''Block changed for:'', p.FirstName, p.LastName, bl.*
+from CompanyRestore_BlockLog bl
+join People p
+	on p.PeopleID = bl.PeopleID
+'
+end
+
+go
+
+
+/**************************************************************************************************************************/
+
+
+if object_id('fn_Drew_Restore_Companies_RestoreTree_t') is not null
+	drop function fn_Drew_Restore_Companies_RestoreTree_t
+go
+
+create function fn_Drew_Restore_Companies_RestoreTree_t(@SourDB varchar(255), @TarDB varchar(255))
+returns @RestoreTree table(id int identity primary key, TableName varchar(255) not null, Operation varchar(255) not null, RestoreSQL nvarchar(max) not null, Fatal bit not null default(0))
+as begin
+	--children to restore
+		--regular child records
+
+		declare @Children table(id int identity, InsTable varchar(255) not null, InsTarSourJoinOn varchar(255) not null, InsNNField varchar(255) not null, MainLinkField varchar(255) not null, ObjectTableName varchar(255),
+			Fatal bit not null, InsertSQL nvarchar(max) null, RestoreSQL nvarchar(max) null)
+
+		insert into @Children(InsTable, InsTarSourJoinOn, InsNNField, MainLinkField, ObjectTableName, Fatal)
+		values('Companies', 'Tar.CompaniesID = Sour.CompaniesID', 'CompaniesID', 'CompaniesID', null, 1),
+		('CompaniesAliases', 'Tar.CompaniesAliasesID = Sour.CompaniesAliasesID', 'CompaniesAliasesID', 'CompaniesID', null, 0),
+		('EmailAddress', 'Tar.EmailAddressID = Sour.EmailAddressID', 'EmailAddressID', 'CompaniesID', null, 0),
+		('LinkCompaniesToAttributes', 'Tar.LinkCompaniesToAttributesID = Sour.LinkCompaniesToAttributesID', 'LinkCompaniesToAttributesID', 'CompaniesID', null, 0),
+		('ClientContactTeams', 'Tar.ClientContactTeamsID = Sour.ClientContactTeamsID', 'ClientContactTeamsID', 'CompaniesID', null, 0),
+		('LinkPeopleToCompanies', 'Tar.LinkPeopleToCompaniesID = Sour.LinkPeopleToCompaniesID', 'LinkPeopleToCompaniesID', 'CompaniesID', null, 0),
+		('Notes', 'Tar.NotesID = Sour.NotesID', 'NotesID', 'CompaniesID', null, 0),
+		('CompaniesBlock', 'Tar.CompaniesBlockID = Sour.CompaniesBlockID', 'CompaniesBlockID', 'CompaniesID', null, 0),
+		('CompaniesIndustry', 'Tar.CompanyIndustriesID = Sour.CompanyIndustriesID', 'CompanyIndustriesID', 'CompaniesID', null, 0),
+		('LinkCompaniesToRates', 'Tar.CompaniesID = Sour.CompaniesID and Tar.RateTypesID = Sour.RateTypesID', 'CompaniesID', 'CompaniesID', null, 0),
+		('LinkCompaniesToOpportunities', 'Tar.CompaniesID = Sour.CompaniesID and Tar.OpportunitiesID = Sour.OpportunitiesID', 'CompaniesID', 'CompaniesID', null, 0),
+		('ProjectsCompaniesLists', 'Tar.CompaniesID = Sour.CompaniesID and Tar.ProjectsID = Sour.ProjectsID', 'CompaniesID', 'CompaniesID', null, 0),
+		('JobOrdersCompaniesLists', 'Tar.CompaniesID = Sour.CompaniesID and Tar.JobOrdersID = Sour.JobOrdersID', 'CompaniesID', 'CompaniesID', null, 0),
+		('MProjectCompaniesLists', 'Tar.CompaniesID = Sour.CompaniesID and Tar.MProjectsID = Sour.MProjectsID', 'CompaniesID', 'CompaniesID', null, 0),
+		('LinkCompaniesToPVA', 'Tar.CompaniesID = Sour.CompaniesID and Tar.MemberID = Sour.MemberID and Tar.PVATypeID = Sour.PVATypeID', 'CompaniesID', 'CompaniesID', null, 0),
+		('LinkCompanyToCompanies', 'Tar.CompaniesID = Sour.CompaniesID and Tar.LinkedCompaniesID = Sour.LinkedCompaniesID', 'CompaniesID', 'CompaniesID', null, 0),
+		('LinkCompanyToCompanies', 'Tar.CompaniesID = Sour.CompaniesID and Tar.LinkedCompaniesID = Sour.LinkedCompaniesID', 'CompaniesID', 'LinkedCompaniesID', null, 0),
+		('LinkObjectToActivityHistory', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Companies', 0),
+		('LinkObjectToDocument', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Companies', 0),
+		('LinkObjectToTask', 'Tar.LeftID = Sour.LeftID and Tar.RightID = Sour.RightID and Tar.ObjectTableName = Sour.ObjectTableName', 'LeftID', 'LeftID', 'Companies', 0),
+		('CompaniesBlockByAddresses', 'Tar.CompaniesID = Sour.CompaniesID and isnull(Tar.ProjectsID, 0) = isnull(Sour.ProjectsID, 0) and Tar.AddressesID = Sour.AddressesID', 'CompaniesID', 'CompaniesID', null, 0),
+		('CompaniesBlockByRoleCodes', 'Tar.CompaniesID = Sour.CompaniesID and isnull(Tar.ProjectsID, 0) = isnull(Sour.ProjectsID, 0) and isnull(Tar.RoleCode1, 0) = isnull(Sour.RoleCode1, 0) and isnull(Tar.RoleCode2, 0) = isnull(Sour.RoleCode2, 0)', 'CompaniesID', 'CompaniesID', null, 0),
+		('CompaniesBlockBySkills', 'Tar.CompaniesID = Sour.CompaniesID and isnull(Tar.ProjectsID, 0) = isnull(Sour.ProjectsID, 0) and Tar.SkillsID = Sour.SkillsID', 'CompaniesID', 'CompaniesID', null, 0),
+		('ProjectTargetCompaniesCandidates', 'Tar.CompaniesID = Sour.CompaniesID and Tar.PeopleID = Sour.PeopleID and Tar.ProjectsID = Sour.ProjectsID', 'CompaniesID', 'CompaniesID', null, 0),
+		('JobOrdersTargetCompaniesCandidates', 'Tar.CompaniesID = Sour.CompaniesID and Tar.PeopleID = Sour.PeopleID and Tar.JobOrdersID = Sour.JobOrdersID', 'CompaniesID', 'CompaniesID', null, 0),
+		('MProjectCompaniesContacts', 'Tar.CompaniesID = Sour.CompaniesID and Tar.PeopleID = Sour.PeopleID and Tar.MProjectsID = Sour.MProjectsID', 'CompaniesID', 'CompaniesID', null, 0)
+
+		--list items
+
+		declare @ListItems table(id int identity, insTable varchar(255) not null, insertSQL nvarchar(max), Fatal bit)
+		insert into @ListItems(insTable, Fatal)
+		values('ListsDetails', 0)
+
+		--grandchildren
+
+		declare @GrandChildren table(id int identity, InsTable varchar(255) not null, InsTarSourJoinOn varchar(255) not null, InsNNField varchar(255) not null, ParentTable varchar(255), SourParentJoinOn varchar(255), 
+			MainLinkField varchar(255) not null, ObjectTableName varchar(255), Fatal bit not null, InsertSQL nvarchar(max) null, RestoreSQL nvarchar(max) null)
+
+		insert into @GrandChildren(InsTable, InsTarSourJoinOn, InsNNField, ParentTable, SourParentJoinOn, MainLinkField, ObjectTableName, Fatal)
+		values('LinkAddressToDistList', 'Tar.LinkToDistListID = Sour.LinkToDistListID', 'LinkToDistListID', 'EmailAddress', 'SourParent.EmailAddressID = Sour.EmailAddressID', 'CompaniesID', null, 0),
+		('LinkAddressToDistList', 'Tar.LinkToDistListID = Sour.LinkToDistListID', 'LinkToDistListID', 'EmailAddress', 'SourParent.EmailAddressID = Sour.DistListID', 'CompaniesID', null, 0),
+		('ProjectsCandidateBlocks', 'Tar.PeopleID = Sour.PeopleID and Tar.ProjectsID = Sour.ProjectsID and Tar.WorkListsID = Sour.WorkListsID', 'PeopleID', 'ProjectTargetCompaniesCandidates', 'SourParent.ProjectsID = Sour.ProjectsID and SourParent.PeopleID = Sour.PeopleID and Sour.WorkListsID = 3', 'CompaniesID', null, 0),
+		('ProjectsCallStatus', 'Tar.ProjectsCallStatusID = Sour.ProjectsCallStatusID', 'ProjectsCallStatusID', 'ProjectTargetCompaniesCandidates', 'SourParent.ProjectsID = Sour.ProjectsID and SourParent.PeopleID = Sour.PeopleID', 'CompaniesID', null, 0)
+		
+	--generate insert sql
+
+	update @Children
+	set InsertSQL = dbo.fn_Drew_RestoreSQL_ChildInsert(@Sourdb, @Tardb, InsTable, InsTarSourJoinOn, InsNNField, MainLinkField, ObjectTableName)
+
+	update @ListItems
+	set insertSQL = dbo.fn_Drew_RestoreSQL_ListItemInsert(@Sourdb, @Tardb, '''Companies''')
+
+	update @GrandChildren
+	set insertSQL = dbo.fn_Drew_RestoreSQL_GrandchildInsert(@Sourdb, @Tardb, InsTable, InsTarSourJoinOn, InsNNField, ParentTable, SourParentJoinOn, MainLinkField, ObjectTableName)
+
+	--populate full restore tree with bulk-generated items
+	
+	
+	insert into @RestoreTree(TableName, RestoreSQL, Operation, Fatal)
+	select InsTable, InsertSQL, 'insert', Fatal
+	from @Children
+
+	insert into @RestoreTree(TableName, RestoreSQL, Operation, Fatal)
+	select InsTable, InsertSQL, 'insert', Fatal
+	from @ListItems
+
+	insert into @RestoreTree(TableName, RestoreSQL, Operation, Fatal)
+	select InsTable, InsertSQL, 'insert', Fatal
+	from @GrandChildren
+
+	--custom
+	declare @nl nvarchar(2) = char(13) + char(10)
+	
+	declare @AddressesSQL nvarchar(max) = ''
+	+ @nl + '	select Sour.AddressesID'
+	+ @nl + '	from ' + @Sourdb + '..Addresses Sour'
+	+ @nl + '	left join ' + @Tardb + '..Addresses Tar'
+	+ @nl + '		on Tar.AddressesID = Sour.AddressesID'
+	+ @nl + '	where Sour.CompaniesID = @MainRecordID'
+	+ @nl + '	and Tar.AddressesID is null'
+
+	declare @pcsSQL nvarchar(max) = ''
+	+ @nl + '	update pcs'
+	+ @nl + '	set InclTC = 1'
+	+ @nl + '	from ProjectTargetCompaniesCandidates ptcc'
+	+ @nl + '	join ProjectsCallStatus pcs'
+	+ @nl + '		on pcs.ProjectsID = ptcc.ProjectsID'
+	+ @nl + '		and pcs.PeopleID = ptcc.PeopleID'
+	+ @nl + '	where ptcc.CompaniesID = @MainRecordID'
+	+ @nl + '	and isnull(pcs.InclTC, 0) = 0'
+
+	insert into @RestoreTree(TableName, RestoreSQL, Operation, Fatal)
+	values('Addresses', dbo.fn_Drew_RestoreSQL_NestedInsert(@SourDB, @TarDB, @AddressesSQL, 'fn_Drew_Restore_Addresses_RestoreTree_t'), 'nested restore', 0),
+	('People', dbo.fn_Drew_RestoreSQL_Companies_TCBlockAndLog(), 'people block update', 0),
+	('ProjectsCallStatus', @pcsSQL, 'set InclTC', 0)
+		
+	return
+end
+
+go
+
+
+/**************************************************************************************************************************/
+
+
+
+
+/**************************************************************************************************************************/
+
+
+
+
+/**************************************************************************************************************************/
+

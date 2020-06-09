@@ -25,11 +25,11 @@
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>delete trigger.sql</FullPath>
         </FileNode>
-        <FileNode Name="fn_Drew_Restore_CandidateBlock_t.sql">
+        <FileNode Name="Execute.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
           <AssociatedConnUserName>SUPER</AssociatedConnUserName>
-          <FullPath>fn_Drew_Restore_CandidateBlock_t.sql</FullPath>
+          <FullPath>Execute.sql</FullPath>
         </FileNode>
         <FileNode Name="fn_Drew_Restore_Projects_DiffTable_t.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
@@ -58,6 +58,18 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>Block Conflict Report (run after Project Restore).dfr</FullPath>
+        </FileNode>
+        <FileNode Name="build 2209">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>build 2209</FullPath>
+        </FileNode>
+        <FileNode Name="Instructions.txt">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Instructions.txt</FullPath>
         </FileNode>
         <FileNode Name="Restore Tree.xlsx">
           <AssociatedConnectionMoniker />

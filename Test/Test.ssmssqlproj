@@ -31,6 +31,12 @@
           <AssociatedConnUserName />
           <FullPath>drop all sql modules.sql</FullPath>
         </FileNode>
+        <FileNode Name="slim db.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>slim db.sql</FullPath>
+        </FileNode>
         <FileNode Name="sp_Drew_Restore_CheckDeleted.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
@@ -74,16 +80,28 @@
           <FullPath>spot check restore tree.sql</FullPath>
         </FileNode>
         <FileNode Name="sync local test dbs with dfedrew.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sync local test dbs with dfedrew.sql</FullPath>
         </FileNode>
+        <FileNode Name="sync remote from shrunk backup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>sync remote from shrunk backup.sql</FullPath>
+        </FileNode>
         <FileNode Name="sync remote test dbs with dfe2009 .sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
           <FullPath>sync remote test dbs with dfe2009 .sql</FullPath>
+        </FileNode>
+        <FileNode Name="sync-n-shrink remote (10-15min).sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>sync-n-shrink remote (10-15min).sql</FullPath>
         </FileNode>
         <FileNode Name="test station.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
