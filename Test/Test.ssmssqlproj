@@ -31,6 +31,18 @@
           <AssociatedConnUserName />
           <FullPath>drop all sql modules.sql</FullPath>
         </FileNode>
+        <FileNode Name="med - sync remote from shrunk backup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>med - sync remote from shrunk backup.sql</FullPath>
+        </FileNode>
+        <FileNode Name="med - sync-n-shrink remote (10 min).sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
+          <AssociatedConnUserName>SUPER</AssociatedConnUserName>
+          <FullPath>med - sync-n-shrink remote (10 min).sql</FullPath>
+        </FileNode>
         <FileNode Name="slim db.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:localhost:False:SUPER</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>localhost</AssociatedConnSrvName>
